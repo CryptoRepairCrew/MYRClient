@@ -42,6 +42,16 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>..\packages\Serilog.1.3.30\lib\net45\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.FullNetFx">
+      <HintPath>..\packages\Serilog.1.3.30\lib\net45\Serilog.FullNetFx.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -54,25 +64,93 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Common\Commands\CommandAttributes.cs" />
+    <Compile Include="Common\Commands\CommandGroup.cs" />
+    <Compile Include="Common\Commands\CommandManager.cs" />
+    <Compile Include="Common\Configuration\GlobalConfigFactory.cs" />
+    <Compile Include="Common\Configuration\IConfig.cs" />
+    <Compile Include="Common\Configuration\IGlobalConfigFactory.cs" />
+    <Compile Include="Common\Configuration\JsonConfigReader.cs" />
+    <Compile Include="Common\Console\ConsoleWindow.cs" />
+    <Compile Include="Common\Context\ApplicationContext.cs" />
+    <Compile Include="Common\Context\IApplicationContext.cs" />
+    <Compile Include="Common\Extensions\ArrayExtensions.cs" />
+    <Compile Include="Common\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Common\Extensions\JsonExtensions.cs" />
+    <Compile Include="Common\Extensions\StringExtensions.cs" />
+    <Compile Include="Common\Helpers\Arrays\ArrayHelpers.cs" />
+    <Compile Include="Common\Helpers\IO\FileHelpers.cs" />
+    <Compile Include="Common\Helpers\Misc\Range.cs" />
+    <Compile Include="Common\Helpers\Time\TimeHelpers.cs" />
+    <Compile Include="Common\Helpers\Validation\Enforce.cs" />
+    <Compile Include="Common\Logging\Logging.cs" />
+    <Compile Include="Common\Platform\Framework.cs" />
+    <Compile Include="Common\Platform\PlatformManager.cs" />
+    <Compile Include="Common\Repository\Bootstrapper.cs" />
+    <Compile Include="Common\Repository\Registries\ClassRegistry.cs" />
+    <Compile Include="Common\Repository\Registries\FactoryRegistry.cs" />
+    <Compile Include="Common\Repository\Registries\IRegistry.cs" />
+    <Compile Include="Common\Repository\Registries\ManagerRegistry.cs" />
+    <Compile Include="Common\Repository\Registries\Registry.cs" />
+    <Compile Include="Common\Repository\Registries\ServerRegistry.cs" />
+    <Compile Include="Common\Repository\Registries\ServiceRegistry.cs" />
+    <Compile Include="Common\Versions\VersionInfo.cs" />
+    <Compile Include="Daemon\Config\DaemonConfig.cs" />
+    <Compile Include="Daemon\Config\IDaemonConfig.cs" />
+    <Compile Include="Daemon\DaemonBase.cs" />
+    <Compile Include="Daemon\DaemonClient.cs" />
+    <Compile Include="Daemon\DaemonRequest.cs" />
+    <Compile Include="Daemon\DaemonResponse.cs" />
+    <Compile Include="Daemon\IDaemonClient.cs" />
+    <Compile Include="Daemon\Requests\CreateRawTransaction.cs" />
+    <Compile Include="Daemon\Requests\CreateRawTransactionInput.cs" />
+    <Compile Include="Daemon\Requests\SignRawTransaction.cs" />
+    <Compile Include="Daemon\Requests\SignRawTransactionInput.cs" />
+    <Compile Include="Daemon\Responses\AddedNodeInfo.cs" />
+    <Compile Include="Daemon\Responses\Block.cs" />
+    <Compile Include="Daemon\Responses\BlockTemplate.cs" />
+    <Compile Include="Daemon\Responses\BlockTemplateTransaction.cs" />
+    <Compile Include="Daemon\Responses\DecodedRawTransaction.cs" />
+    <Compile Include="Daemon\Responses\IBlockTemplate.cs" />
+    <Compile Include="Daemon\Responses\Info.cs" />
+    <Compile Include="Daemon\Responses\ListReceivedByAccountTransaction.cs" />
+    <Compile Include="Daemon\Responses\ListReceivedByAddressTransaction.cs" />
+    <Compile Include="Daemon\Responses\ListTransaction.cs" />
+    <Compile Include="Daemon\Responses\MiningInfo.cs" />
+    <Compile Include="Daemon\Responses\MultisigAddress.cs" />
+    <Compile Include="Daemon\Responses\NodeAddress.cs" />
+    <Compile Include="Daemon\Responses\PeerInfo.cs" />
+    <Compile Include="Daemon\Responses\SignedRawTransaction.cs" />
+    <Compile Include="Daemon\Responses\Transaction.cs" />
+    <Compile Include="Daemon\Responses\TransactionDetail.cs" />
+    <Compile Include="Daemon\Responses\TransactionSinceBlock.cs" />
+    <Compile Include="Daemon\Responses\TransactionsSinceBlock.cs" />
+    <Compile Include="Daemon\Responses\TxOutSetInfo.cs" />
+    <Compile Include="Daemon\Responses\UnspentTransaction.cs" />
+    <Compile Include="Daemon\Responses\ValidateAddress.cs" />
+    <Compile Include="Daemon\Responses\Work.cs" />
+    <Compile Include="Forms\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
+    <Compile Include="Forms\WalletMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <Compile Include="Forms\WalletMenu.Designer.cs">
+      <DependentUpon>WalletMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainMenu.en.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\WalletMenu.en.resx">
+      <DependentUpon>WalletMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WalletMenu.resx">
+      <DependentUpon>WalletMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,9 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

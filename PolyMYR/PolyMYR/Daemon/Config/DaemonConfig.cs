@@ -20,6 +20,9 @@
 //     license or white-label it as set out in licenses/commercial.txt.
 // 
 #endregion
+
+using System;
+
 namespace PolyMYR.Daemon.Config
 {
     public class DaemonConfig:IDaemonConfig
@@ -39,18 +42,12 @@ namespace PolyMYR.Daemon.Config
             get { return string.Format("http://{0}:{1}", Host, Port); }
         }
 
-        public DaemonConfig(dynamic config)
+        public DaemonConfig(string host, int port, string username, string password)
         {
-            if (config == null)
-            {
-                Valid = false;
-                return;
-            }
-
-            Host = !string.IsNullOrEmpty(config.host) ? config.host : "0.0.0.0";
-            Port = config.port;
-            Username = config.username;
-            Password = config.password;
+            Host = host;
+            Port = port;
+            Username = username;
+            Password = password;
 
             Valid = true;
         }

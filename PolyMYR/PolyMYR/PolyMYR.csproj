@@ -147,15 +147,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\MenuForm.resx">
+    <Compile Include="Forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="Forms\WalletMenu.en.resx">
       <DependentUpon>WalletMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WalletMenu.resx">
+    <Compile Include="Forms\WalletMenu.resx">
       <DependentUpon>WalletMenu.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

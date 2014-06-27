@@ -22,7 +22,7 @@
 #endregion
 using System.Collections.Generic;
 
-namespace PolyMYR.Coin.Daemon.Responses
+namespace PolyMYR.Daemon.Responses
 {
     public class TransactionsSinceBlock
     {

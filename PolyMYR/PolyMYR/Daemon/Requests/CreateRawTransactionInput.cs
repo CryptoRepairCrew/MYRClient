@@ -22,7 +22,7 @@
 #endregion
 using Newtonsoft.Json;
 
-namespace PolyMYR.Coin.Daemon.Requests
+namespace PolyMYR.Daemon.Requests
 {
     public class CreateRawTransactionInput
     {

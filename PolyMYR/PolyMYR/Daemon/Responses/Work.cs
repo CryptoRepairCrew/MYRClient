@@ -20,7 +20,7 @@
 //     license or white-label it as set out in licenses/commercial.txt.
 // 
 #endregion
-namespace PolyMYR.Coin.Daemon.Responses
+namespace PolyMYR.Daemon.Responses
 {
     // Documentation: 
     // https://en.bitcoin.it/wiki/Getwork

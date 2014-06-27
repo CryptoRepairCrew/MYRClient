@@ -23,7 +23,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PolyMYR.Coin.Daemon.Responses
+namespace PolyMYR.Daemon.Responses
 {
     public interface IBlockTemplate
     {

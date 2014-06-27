@@ -22,7 +22,7 @@
 #endregion
 using System.Collections.Generic;
 
-namespace PolyMYR.Coin.Daemon.Requests
+namespace PolyMYR.Daemon.Requests
 {
     public class CreateRawTransaction
     {

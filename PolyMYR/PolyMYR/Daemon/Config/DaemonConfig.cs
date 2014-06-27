@@ -20,7 +20,7 @@
 //     license or white-label it as set out in licenses/commercial.txt.
 // 
 #endregion
-namespace PolyMYR.Coin.Daemon.Config
+namespace PolyMYR.Daemon.Config
 {
     public class DaemonConfig:IDaemonConfig
     {

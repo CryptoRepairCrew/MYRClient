@@ -20,10 +20,10 @@
 //     license or white-label it as set out in licenses/commercial.txt.
 // 
 #endregion
-using PolyMYR.Coin.Daemon.Config;
-using PolyMYR.Coin.Daemon.Responses;
+using PolyMYR.Daemon.Config;
+using PolyMYR.Daemon.Responses;
 
-namespace PolyMYR.Coin.Daemon
+namespace PolyMYR.Daemon
 {
     public interface IDaemonClient
     {

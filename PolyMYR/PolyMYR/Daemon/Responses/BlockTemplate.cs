@@ -23,7 +23,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace PolyMYR.Coin.Daemon.Responses
+namespace PolyMYR.Daemon.Responses
 {
     /// <summary>
     /// getblocktemplate is the new decentralized Bitcoin mining protocol, openly developed by the Bitcoin community over mid 2012. It supercedes the old getwork mining protocol.

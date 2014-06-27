@@ -23,10 +23,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using PolyMYR.Coin.Daemon.Config;
-using PolyMYR.Coin.Daemon.Requests;
-using PolyMYR.Coin.Daemon.Responses;
+using PolyMYR.Daemon.Config;
+using PolyMYR.Daemon.Requests;
+using PolyMYR.Daemon.Responses;
 using Serilog;
+
 
 /* This file is based on https://github.com/BitKoot/BitcoinRpcSharp */
 
@@ -40,7 +41,7 @@ using Serilog;
 // Original bitcoin api call list: https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_Calls_list
 // Rpc error codes: https://github.com/bitcoin/bitcoin/blob/master/src/rpcprotocol.h#L34
 
-namespace PolyMYR.Coin.Daemon
+namespace PolyMYR.Daemon
 {
     /// <summary>
     /// RPC client for coind's.

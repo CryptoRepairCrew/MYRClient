@@ -22,7 +22,7 @@
 #endregion
 /* This file is based on https://github.com/BitKoot/BitcoinRpcSharp */
 
-namespace PolyMYR.Coin.Daemon.Responses
+namespace PolyMYR.Daemon.Responses
 {
     public class TransactionDetail
     {
